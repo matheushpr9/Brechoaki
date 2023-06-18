@@ -74,6 +74,10 @@ table {
     left: 80px;
 }
 
+.galeria {
+    width: 31.25rem;
+}
+
 .cabecalho {
     align-items: center;
     display: flex;
@@ -106,9 +110,13 @@ table {
     background-color: transparent;
     border: none;
     font-size: 1rem;
-    height: 24px;
     padding: 10px;
     width: 500px;
+}
+
+.busca__botao {
+    border: none;
+    background: none;
 }
 
 .busca__icone {
@@ -135,7 +143,7 @@ table {
     align-content: space-between;
 }
 
-.card {
+.card-produto {
     border-radius: 10px;
     box-shadow: 0px 10px 10px #00000050;
     color: #FFFFFF;
@@ -154,13 +162,13 @@ table {
     border-radius: 8px;
     border: 2px solid transparent;
     font-size: 1.2rem;
-    left: 310px;
+    left: 300px;
     margin-right: 1.5rem;
     padding: .5rem .5rem;
     position: absolute;
     text-align: center;
     top: 20px;
-    width: 100px;
+    width: max-content;
 }
 
 .card__info {
@@ -185,8 +193,8 @@ table {
 }
 
 .card__descricao {
-    font-size: 0.6em;
-    margin-top: 0.8em;
+    font-size: 0.8em;
+    margin-top: 0.4em;
 }
 
 .vitrine {
@@ -234,14 +242,15 @@ table {
     font-weight: bold;
     line-height: 2rem;
     color: #FFFFFF;
+    font-size: 1.25rem;
 }
 
 .imagem__texto {
-    font-size: 1rem;
+    font-size: 1.0rem;
 }
 
 .imagem__descricao {
-    font-size: 0.7rem;
+    font-size: 1.5rem;
 }
 
 .menu-lateral {
@@ -265,17 +274,13 @@ table {
     font-size: 24px;
 }
 
-.menu-lateral__navegacao a:first-child {
-    font-weight: bold;
-    color: #7B78E5;
-}
-
 .menu-lateral__navegacao img {
     margin-right: 1.5rem;
 }
 
 .pagina-inicial {
     max-width: 1440px;
+    min-height: 88vh;
     padding: 1.5rem;
     margin: 0 auto;
 }
@@ -333,7 +338,6 @@ table {
 }
 
 .rodape {
-    background-color: #04244F;
     width: 100%;
     padding: 1.5rem 3rem;
     box-sizing: border-box;
@@ -373,7 +377,7 @@ table {
     margin-right: 1.5rem;
     border-radius: 8px;
     padding: .8rem .5rem;
-    width: 100px;
+    width: max-content;
     text-align: center;
     border: 2px solid transparent;
 }
@@ -381,4 +385,31 @@ table {
 .tags__tag:hover {
     border: 2px solid #7B78E5;
     cursor: pointer;
+}
+
+input {
+    color: #FFF;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #FFF;
+    opacity: 1; /* Firefox */
+  }
+  
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #FFF;
+  }
+  
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #FFF;
+  }
+
+.alert alert-primary{
+    --bs-alert-color: #084298;
+    --bs-alert-bg: #cfe2ff;
+    --bs-alert-border-color: #b6d4fe;
 }
