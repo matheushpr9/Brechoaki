@@ -8,20 +8,20 @@
         </div>
     {% endfor %}
     <div class="cabecalho__busca">
-        <div class="busca__fundo">
-            <form action="{% url 'busca' %}">
-                <input name = "busca" class="busca__input" type="text" placeholder="O que você procura?">
-                <button type="submit" class="busca__botao"><img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search"></button>
+        <form action="{% url 'busca' %}">
+                <div class="busca__fundo">
+                    <input name = "busca" class="busca__input" type="text" placeholder="O que você procura?">
+                    <button type="submit" class="busca__botao"><img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search"></button>
+                </div>  
             </form>
-        </div>  
     </div>
 </header>
 <main class="principal">
     <section class="menu-lateral">
         <nav class="menu-lateral__navegacao">
-            <a href="{% url 'home' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
-            <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Login </a>
-            <a href="{% url 'cadastro' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Cadastro </a>
+            <a href="{% url 'home' %}"><img src="{% static '/assets/ícones/1x/Home - inativo.png' %}"> Home</a>
+            <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Conta </a>
+            <a href="{% url 'home' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Carrinho </a>
             <a href="{% url 'logout'%}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Logout </a>
         </nav>
     </section>

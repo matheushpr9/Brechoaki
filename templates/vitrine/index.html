@@ -22,12 +22,12 @@
                         <ul class="cards__lista">
                         {% if cards %}
                             {% for item in cards %}
-                            <li class="card">
+                            <li class="card-produto">
                                 <a href="{% url 'imagem' item.id %}">
                                     {% if item.foto == "" or item == null %}
-                                    <img class="card__imagem" src="{% static '/assets/imagens/vitrine/'%}{{ item.id }}/{{ item.foto }} " alt="foto">\
+                                    <img class="card__imagem" src="{% static '/assets/imagens/vitrine/'%}{{ item.id }}/{{ item.foto }} " alt="foto">
                                     {% else %}
-                                    <img class="card__imagem" src="{{ item.foto.url }}" alt="foto">\
+                                    <img class="card__imagem" src="{{ item.foto.url }}" alt="foto">
                                     {% endif %}
                                 </a>
                                 <span class="card__tag">{{ item.categoria }}</span>

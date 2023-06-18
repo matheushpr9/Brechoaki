@@ -23,15 +23,17 @@
                     {% csrf_token %}
                     <div class="row">
                         {% for field in form.visible_fields %}
-                            <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
+                            <div class="col-12 col-lg-12" style="margin-bottom: 1rem;">
                                 <label for="{{field.id_for_label}}" style="color:#D9D9D9; margin-bottom: 5px;">{{ field.label }}</label>
                                 {{ field }}
                             </div>
                         {% endfor %}
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-success col-12" style="padding: top 5px;"">Logar</button>
+                        <button type="submit" class="btn btn-success col-12">Logar</button>
+                        <p class="text-white mt-3"> Ainda não tem conta? <a href="{% url 'cadastro' %}" class="text-white"> Cadastre-se </a></p>
                     </div>
+                    
                 </form>
             </section>
         </main>
