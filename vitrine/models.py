@@ -1,6 +1,16 @@
 from django.db import models
 from datetime import datetime
 
+    
+class Cliente(models.Model):
+    nome = models.CharField(max_length=100, null=False, blank=False)
+    cpf = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
+    telefone = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField(max_length=100, null=False, blank=False)
+    senha = models.CharField(max_length=100, null=False, blank=False)
+    def __str__(self):
+        return f"{self.cpf} - {self.nome}"
+
 class Endereco(models.Model):
     id = models.AutoField(primary_key=True)
     rua = models.CharField(max_length=100, null=False, blank=False)
@@ -8,17 +18,9 @@ class Endereco(models.Model):
     cidade =  models.CharField(max_length=100, null=False, blank=False)
     numero = models.IntegerField(null=False)
     complemento = models.CharField(max_length=100, null=True, blank=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.rua},{self.bairro},{self.numero} {self.complemento},{self.cidade}"
-    
-class Cliente(models.Model):
-    nome = models.CharField(max_length=100, null=False, blank=False)
-    cpf = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
-    telefone = models.CharField(max_length=100, null=False, blank=False)
-    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE)
-    def __str__(self):
-        return f"{self.cpf} - {self.nome}"
-
 
 class Loja(models.Model):
     nomeFantasia = models.CharField(max_length=100, null=False, blank=False)
