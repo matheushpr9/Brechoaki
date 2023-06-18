@@ -1,14 +1,14 @@
 from django import forms
 
 class LoginForms(forms.Form):
-    nome_login = forms.CharField(
-        label="Nome de Login",
+    email = forms.CharField(
+        label="Email",
         required=True,
         max_length=100,
         widget=forms.TextInput(
             attrs={
                 "class":"form-control",
-                "placeholder":"Ex.. Matheus Henrique"
+                "placeholder":"Ex.. matheus.Henrique@gmail.com"
             }
         )
         )
