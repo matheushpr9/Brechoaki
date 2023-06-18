@@ -24,7 +24,17 @@ class Cliente(models.Model):
         return False
 
 
-class Endereco(models.Model):
+class EnderecoLoja(models.Model):
+    id = models.AutoField(primary_key=True)
+    rua = models.CharField(max_length=100, null=False, blank=False)
+    bairro = models.CharField(max_length=100, null=False, blank=False)
+    cidade =  models.CharField(max_length=100, null=False, blank=False)
+    numero = models.IntegerField(null=False)
+    complemento = models.CharField(max_length=100, null=True, blank=True)
+    def __str__(self):
+        return f"{self.rua},{self.bairro},{self.numero} {self.complemento},{self.cidade}"
+    
+class EnderecoCliente(models.Model):
     id = models.AutoField(primary_key=True)
     rua = models.CharField(max_length=100, null=False, blank=False)
     bairro = models.CharField(max_length=100, null=False, blank=False)
@@ -41,7 +51,7 @@ class Loja(models.Model):
     cnpj = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
     telefone= models.CharField(max_length=100, null=False,blank=False)
     email = models.CharField(max_length=100, null=False, blank=False)
-    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE)
+    endereco = models.ForeignKey(EnderecoLoja, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.nomeFantasia}-{self.cnpj}"
     #fk endereço
