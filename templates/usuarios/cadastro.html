@@ -25,14 +25,14 @@
                     <div class="row">
                         {% for field in form.visible_fields %}
                             <div class="col-12 col-lg-12" style="margin-bottom: 1rem;">
-                                <label for="{{field.id_for_label}}" style="color:#D9D9D9; margin-bottom: 5px;">{{ field.label }}</label>
+                                <label for="{{field.id_for_label}}" style="color:#8F9BB3; margin-bottom: 5px;">{{ field.label }}</label>
                                 {{ field }}
                             </div>
                         {% endfor %}
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success col-12">Cadastrar</button>
-                        <p class="text-white mt-3"> Já possui conta? <a href="{% url 'login' %}" class="text-white"> Acesse a conta </a></p>
+                        <p class="text mt-3"> Já possui conta? <a href="{% url 'login' %}" class="text"> Acesse a conta </a></p>
                     </div>
                 </form>
             </section>
