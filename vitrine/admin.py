@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from vitrine.models import EnderecoCliente,EnderecoLoja,Cliente,Loja,Produto,Compra,Venda
+from carrinho.models import Carrinho
 
 class ListandoProdutos(admin.ModelAdmin):
     list_display = ("id", "nome", "categoria","tamanho", "preco", "estadoDaPeca","loja","disponibilidade")
@@ -16,3 +17,4 @@ admin.site.register(Loja)
 admin.site.register(Produto, ListandoProdutos)
 admin.site.register(Compra)
 admin.site.register(Venda)
+admin.site.register(Carrinho)

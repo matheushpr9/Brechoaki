@@ -54,7 +54,6 @@ class Loja(models.Model):
     endereco = models.ForeignKey(EnderecoLoja, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.nomeFantasia}-{self.cnpj}"
-    #fk endereço
 
 class Produto(models.Model):
 

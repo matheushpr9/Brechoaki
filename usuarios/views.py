@@ -3,8 +3,6 @@ from usuarios.forms import LoginForms, CadastroForms
 from vitrine.models import Cliente 
 from django.contrib import messages
 
-# Create your views here.
-
 def login(request):
     form = LoginForms()
 
@@ -21,7 +19,11 @@ def login(request):
                 obj = Cliente.objects.filter(email=email).first()
                 field_object = Cliente._meta.get_field(field_name)
                 nome = field_object.value_from_object(obj)
-
+                obj = Cliente.objects.filter(email=email).first()
+                field_object = Cliente._meta.get_field('cpf')
+                cpf = field_object.value_from_object(obj)
+                request.session["logado"] = True
+                request.session["user"] = f"{cpf}"
                 messages.success(request, f"Seja Bem vindo de volta {nome}!!!")
                 return redirect('home')
             messages.error(request, "Email ou senha invaĺálido(s)")
@@ -68,4 +70,5 @@ def cadastro(request):
 
 def logout(request):
     messages.success(request, "Até mais!")
+    request.session["logado"] = False
     return redirect("login")

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vitrine.apps.vitrineConfig',
     'usuarios.apps.UsuariosConfig',
+    'carrinho.apps.CarrinhoConfig'
 ]
 
 MIDDLEWARE = [
