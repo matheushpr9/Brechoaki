@@ -94,5 +94,5 @@ class Compra(models.Model):
 class Venda(models.Model):
     id = models.AutoField(primary_key=True)
     data = models.DateTimeField(default=datetime.now, blank=False)
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    loja = models.ForeignKey(Loja, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
+    loja = models.ForeignKey(Loja, on_delete=models.DO_NOTHING)

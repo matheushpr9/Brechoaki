@@ -3,6 +3,7 @@ from usuarios.forms import LoginForms, CadastroForms
 from vitrine.models import Cliente 
 from django.contrib import messages
 
+
 def login(request):
     form = LoginForms()
 

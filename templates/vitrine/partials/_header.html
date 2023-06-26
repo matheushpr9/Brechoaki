@@ -19,9 +19,9 @@
 <main class="principal">
     <section class="menu-lateral">
         <nav class="menu-lateral__navegacao">
-            <a href="{% url 'home' %}"><img src="{% static '/assets/ícones/1x/home.png' %}"> Home</a>
-            <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/conta (1).png' %}"> Conta </a>
-            <a href="{% url 'home' %}"><img src="{% static '/assets/ícones/1x/carrinho.png' %}"> Carrinho </a>
-            <a href="{% url 'logout'%}"><img src="{% static '/assets/ícones/1x/logout (2).png' %}"> Logout </a>
+            <a href="{% url 'home' %}"><i class="fa fa-home" style="font-size:30px;color:black;margin-right: 20px;"></i> Home</a>
+            <a href="{% url 'login' %}"><i class="fa fa-user" style="font-size:30px;color:black;margin-right: 20px;"></i> Conta </a>
+            <a href="{% url 'verCarrinho' %}"><i class="fa fa-shopping-cart" style="font-size:30px;color:black;margin-right: 20px;"></i> Carrinho </a>
+            <a href="{% url 'logout'%}"><i class="fa fa-long-arrow-right" style="font-size:30px;color:black;margin-right: 20px;"></i> Logout </a>
         </nav>
     </section>
