@@ -1,5 +1,6 @@
 from django.db import models
-from vitrine.models import Produto, Cliente
+from vitrine.models import Produto
+from usuarios.models import Cliente
 
 # Create your models here.
 class Carrinho(models.Model):

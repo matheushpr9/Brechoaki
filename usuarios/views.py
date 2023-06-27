@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from usuarios.forms import LoginForms, CadastroForms
-from vitrine.models import Cliente 
+from usuarios.models import Cliente 
 from django.contrib import messages
 
 
