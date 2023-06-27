@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from vitrine.models import Produto
 from usuarios.models import Cliente
 from carrinho.models import Carrinho
+from django.contrib import messages
 
 
 def adicionarCarrinho(request):
@@ -12,6 +13,7 @@ def adicionarCarrinho(request):
         cliente = cliente
     )
     carrinho.save()
+    messages.success(request, f"Item adcionado ao carrinho!!!")
     return redirect('verCarrinho')
 
 def verCarrinho(request):
@@ -29,5 +31,6 @@ def removerCarrinho(request, item_id):
         produto = get_object_or_404(Produto, pk=item_id)
         item = get_object_or_404(Carrinho, produto=produto)
         item.delete()
+        messages.success(request, f"Item removido do carrinho!!!")
         return redirect('verCarrinho')
     return redirect('login')
